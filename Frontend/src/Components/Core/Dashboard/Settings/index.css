@@ -1,0 +1,18 @@
+.lable-style{
+    font-size: 1rem;
+    color: #AFB2BF;
+}
+/* //                         className='text-sm bg-richblack-700 p-1 w-full rounded-md border-b border-b-richblack-500' */
+
+
+.form-style{
+    font-size: 0.8rem;
+    color: #AFB2BF;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    background-color: #2C333F;
+    border-bottom: 1px #585D69;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+    border-bottom: 1px solid #585D69;
+}
