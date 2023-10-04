@@ -1,2 +1,5 @@
-/Frontend/node_modules/
-/Server/node_modules/
+Frontend/node_modules/
+Frontend/.env
+
+Server/node_modules/
+Server/.env
