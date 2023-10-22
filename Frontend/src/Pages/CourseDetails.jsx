@@ -114,17 +114,17 @@ export const CourseDetails = () => {
     } = courseData?.courseDetails
 
   return (
-    <div className='flex flex-col text-white h-[1000px] min-h-screen bg-richblack-900'>
+    <div className='flex flex-col text-white h-[1000p] min-h-min bg-richblack-900'>
         
-        <div className='w-full relative bg-richblack-800 custom-lg:h-[15rem] min-h-max'>
-            <div className='lg:w-8/10 custom-md:w-[50%]  flex flex-col gap-2 pl-[100px] pt-5'>
+        <div className='w-full relative bg-richblack-800 custom-lg:h-[15rem] custom-sm:h-[25rem] custom-sm:flex custom-sm:flex-col custom-sm:gap-4 min-h-max'>
+            <div className='w-[90%] custom-lg:w-8/10 mx-auto  flex flex-col gap-2  pt-5'>
                 <p className='text-2xl custom-md:text-lg font-semibold capitalize'>
                     {courseName}
                 </p>
                 <p className='custom-lg:text-sm text-xs text-richblack-400'>
                     {courseDescription}
                 </p>
-                <div className='flex custom-lg:flex-row flex-col gap-2 custom-lg:items-center '>
+                <div className='flex flex-row custom-md:flex-col gap-2 custom-sm:flex-wrap items-center custom-md:items-start'>
                     <span className='text-lg text-yellow-50 flex flex-row gap-2'>{avgReviewCount}
                     <RatingStars Review_Count={avgReviewCount} Star_Size={24}/></span>
                     
@@ -136,7 +136,7 @@ export const CourseDetails = () => {
                     <p className='text-richblack-25 text-lg'>Created By {`${instructor.firstName}`}</p>
                 </div>
 
-                <div className='flex gap-x-3 flex-col custom-lg:flex-row custom-lg:text-lg text-xs gap-2 pb-4'>
+                <div className='flex gap-x-3 custom-md:flex-col flex-row custom-sm:flex-wrap custom-lg:text-lg text-xs gap-2 pb-4'>
                     <p className='flex flex-row items-center gap-2'> 
                     <HiOutlineInformationCircle className=''/>
                     Created At {formatDate(createdAt)} </p>
@@ -147,9 +147,7 @@ export const CourseDetails = () => {
                 </div>
             </div>
 
-            <div className='absolute right-[100px] top-[50px] custom-lg:w-[350px] custom-md:w-[40%]
-             custom-md:right-[7%] bg-richblack-700 rounded-md
-             custom-sm:w-[300px] custom-sm:top-[110%] custom-sm:float mx-auto'>
+            <div className='custom-sm:static absolute right-[100px] top-[50px] custom-lg:w-[350px] custom-md:w-[40%] custom-md:right-[7%] bg-richblack-700 rounded-md custom-sm:max-w-[90%] custom-sm:w-[280px] mx-auto'>
                 <CourseDetailsCard 
                     course={courseData?.courseDetails}
                     setConfirmationModal={setConfirmationModal}
@@ -158,33 +156,33 @@ export const CourseDetails = () => {
             </div>
         </div>
 
-        <div className='w-8/10 custom-sm:mt-[20rem] flex flex-col gap-2 pl-[100px] pt-5'>
+        <div className='custom-lg:w-8/10 w-[90%] mx-auto custom-sm:mt-[32rem] flex flex-col gap-2 pt-5 '>
             <p className='text-2xl '> What you will learn</p>
             <p>
                 {whatYouWillLearn}
             </p>
         </div>
 
-        <div className='custom-lg:w-7/12 custom-md:w-[50%] flex flex-col gap-2 pl-[100px] pt-5'>
+        <div className='custom-lg:w-8/10 w-[90%] mx-auto flex flex-col gap-2 pt-5'>
             <div  className="flex flex-col gap-2">
                 <p className='text-2xl'>Course content</p>
 
-                <div className='flex custom-lg:flex-row flex-col gap-3 lg:justify-between'>
+                <div className='flex w-[50%] custom-sm:w-[90%] custom-lg:flex-row flex-col gap-3 custom-lg:justify-between'>
                     <div className='flex custom-lg:flex-row flex-col gap-x-2 custom-lg:items-center text-md text-richblack-400'>
                         <span>
                             {courseContent.length} sections 
                         </span>
-                        <BsDot />
+                        <BsDot className='custom-sm-md:hidden'/>
                         <span>
                             {totalNoOfLectures} lectures
                         </span>
-                        <BsDot/>
+                        <BsDot className='custom-sm-md:hidden'/>
                         <span>
                             {courseData?.totalDuration} total length
                         </span>
                     </div>
 
-                    <div className='custom-md:self-end'>
+                    <div className='custom-sm-md:self-end'>
                         <button onClick={() => setIsActive([])}
                         className='w-full text-yellow-50 text-md tracking-wide font-semibold'>
                             Collapse all sections
@@ -195,7 +193,7 @@ export const CourseDetails = () => {
                 </div>
 
                 {/* Course Details Accordion */}
-                <div className="py-4 mt-0">
+                <div className="py-4 mt-0 w-[50%] custom-sm:w-[90%]">
                     {courseContent?.map((course, index) => (
                         <CourseAccordionBar
                         course={course}

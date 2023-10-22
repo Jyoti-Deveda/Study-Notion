@@ -5,15 +5,15 @@ import {TypeAnimation} from 'react-type-animation'
 
 export const CodeBlocks = ({position, heading, subHeading, ctabtn1, ctabtn2, codeblock, backgroundGradient, codeColor}) => {
   return (
-    <div className={`flex ${position} my-20 items-start custom-lg:justify-between gap-10`}>
+    <div className={`flex ${position} my-20 items-start custom-lg:justify-between gap-10 custom-sm:-ml-3`}>
         
         {/* section 1  */}
-        <div className='w-[100%] custom-lg:w-[50%] flex flex-col gap-8'>
+        <div className='w-[90%] mx-auto custom-lg:w-[50%] flex flex-col custom-lg:gap-8 gap-4 custom-sm:gap-4'>
             {heading}
-            <div className='custom-lg:text-center custom-sm:text-sm text-lg font-bold text-richblack-300 '>
+            <div className='custom-sm:text-sm text-lg font-bold text-richblack-300 '>
                 {subHeading}
             </div>
-            <div className='flex gap-7 mt-7'>
+            <div className='flex custom-sm:flex-col items-start gap-7 mt-7'>
                 <CTAButton active={ctabtn1.active} linkto={ctabtn1.linkto}>
                     <div className='flex gap-2 items-center'>
                         {ctabtn1.btnText}
@@ -28,7 +28,7 @@ export const CodeBlocks = ({position, heading, subHeading, ctabtn1, ctabtn2, cod
         </div>
 
         {/* section 2 */}
-        <div className='bg flex flex-row justify-between h-fit w-[80%] custom-lg:w-[500px] py-4 border-richblack-100
+        <div className='bg flex flex-row justify-between h-fit w-[90%] mx-auto custom-lg:w-[500px] py-4 border-richblack-100
         bg-[radial-gradient(ellipse_at_center)] from-richblack-700 to-yellow-900'>
             {/* hw- bg gradient  */}
             {backgroundGradient}

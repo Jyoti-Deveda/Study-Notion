@@ -69,7 +69,7 @@ export const Catalog = () => {
                 </div>
                 <div className='flex gap-x-2 text-xl'>
                     <p
-                    className={`px-4 py-2 ${
+                    className={` py-2 ${
                     active === 1
                         ? "border-b border-b-yellow-25 text-yellow-25"
                         : "text-richblack-50"

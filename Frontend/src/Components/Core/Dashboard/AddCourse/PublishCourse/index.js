@@ -68,12 +68,12 @@ export const PublishCourse = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-            <label htmlFor='public'>
+            <label htmlFor='public' className='flex flex-row items-center'>
                 <input
                     type='checkbox'
                     id='public'
                     {...register('public')}
-                    className='rounded h-4 w-4'
+                    className='rounded-full h-4 w-4'
                 />
                 <span className='ml-3'>
                     Make this course as public

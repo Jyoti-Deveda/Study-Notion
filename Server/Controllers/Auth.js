@@ -282,6 +282,7 @@ exports.login = async (req, res) => {
         //fetch data
         const {email, password} = req.body;
 
+		console.log("Fetched data")
         //validation
         if(!email || !password){
             return res.status(400).json({
@@ -320,6 +321,8 @@ exports.login = async (req, res) => {
                 expiresIn: new Date(Date.now()) + 3*24*60*60*1000,
                 httpOnly: true,
             }
+
+			console.log("Login successfull")
             //send response
             res.cookie("token", token, options).status(200).json({
                 success: true,

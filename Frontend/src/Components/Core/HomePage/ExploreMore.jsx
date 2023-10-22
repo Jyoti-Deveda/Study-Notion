@@ -29,7 +29,7 @@ export const ExploreMore = () => {
     }
 
     return (
-        <div className='flex flex-col items-center justify-center custom-sm:w-[80%] mx-auto'>
+        <div className='flex flex-col items-center justify-center custom-sm:w-[90%] mx-auto'>
             <div className='text-center font-semibold text-4xl custom-sm:text-2xl'>
                 Unlock the <HighlightText text={"Power of code"}/>
             </div>
@@ -58,7 +58,7 @@ export const ExploreMore = () => {
             </div>
 
             {/* cards  */}
-            <div className='custom-sm:h-[40rem] h-[150px] '>
+            <div className='custom-sm:-mt-10 custom-sm:h-[40rem] h-[150px] '>
                 
                 <div className='absolute translate-x-[-50%] translate-y-[15%] rounded-sm
                  flex flex-row custom-sm:flex-col gap-y-[3rem] custom-sm:w-[80%] items-center justify-center w-full gap-6 mx-auto '>

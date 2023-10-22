@@ -8,13 +8,13 @@ import { CTAButton } from './CTAButton'
 export const LearningLanguageSection = () => {
   return (
     <div className='mt-[130px] mb-32'>
-      <div className='flex flex-col gap-5 items-center w-full'>
+      <div className='flex flex-col gap-5 custom-sm:gap-3 items-center w-full'>
 
           <div className='font-semibold custom-sm:text-2xl text-4xl text-center'>
             Your Swiss Knife for <HighlightText text={"learning any language"}/>
           </div>
 
-          <div className='text-center text-richblack-600 mx-auto text-base mt-3 font-medium w-[70%]'>
+          <div className='text-center text-richblack-600 mx-auto text-base mt-3 font-medium w-[70%] custom-sm:w-[90%]'>
             Using spin making learning multiple languages easy. with 20+ languages realistic voice-over, progress tracking, custom schedule and more.
           </div>
 

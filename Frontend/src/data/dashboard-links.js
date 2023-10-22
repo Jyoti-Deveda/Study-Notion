@@ -33,13 +33,14 @@ export const sidebarLinks = [
     path: "/dashboard/enrolled-courses",
     type: ACCOUNT_TYPE.STUDENT,
     iconName: "VscMortarBoard",
-  },{
-    id: 6,
-    name: "Purchase History",
-    path: "/dashboard/purchase-history",
-    type: ACCOUNT_TYPE.STUDENT,
-    iconName: "VscMortarBoard",
   },
+  // {
+  //   id: 6,
+  //   name: "Purchase History",
+  //   path: "/dashboard/purchase-history",
+  //   type: ACCOUNT_TYPE.STUDENT,
+  //   iconName: "VscMortarBoard",
+  // },
   {
     id: 7,
     name: "Your Cart",

@@ -4,9 +4,9 @@ import { RenderSteps } from './RenderSteps'
 export const AddCourse = () => {
   return (
         <>
-            <div className='text-white flex gap-5 '>
-                <div className='w-[60%]'>
-                    <h1>Add course</h1>
+            <div className='text-white flex gap-5 custom-sm-md:flex-col'>
+                <div className='custom-lg:w-[60%] w-full flex flex-col gap-8'>
+                    <h1 className='text-3xl font-bold'>Add course</h1>
                     <div>
                         <RenderSteps/>
                     </div>

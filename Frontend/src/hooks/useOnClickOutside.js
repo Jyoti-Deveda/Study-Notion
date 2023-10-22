@@ -6,7 +6,7 @@ export default function useOnClickOutside(ref, handler) {
     // Define the listener function to be called on click/touch events
     const listener = (event) => {
       // If the click/touch event originated inside the ref element, do nothing
-      console.log("ref.current ", ref.current);
+      // console.log("ref.current ", ref.current);
       // !ref.current here mean that if ref is not pointing to anything i.e the dropdown is already closed
       if (!ref.current || ref.current.contains(event.target)) {
         return;

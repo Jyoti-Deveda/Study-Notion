@@ -59,8 +59,8 @@ export default function ChangeProfilePicture() {
   }, [imageFile])
   return (
     <>
-      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12 text-richblack-5">
-        <div className="flex items-center gap-x-4">
+      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 custom-lg:px-12 px-6 custom-sm:px-2 text-richblack-5">
+        <div className="flex items-center flex-wrap justify-center gap-y-4 custom-lg:gap-x-4 gap-x-2">
           <img
             src={previewSource || user?.image}
             alt={`profile-${user?.firstName}`}
@@ -79,7 +79,7 @@ export default function ChangeProfilePicture() {
               <button
                 onClick={handleClick}
                 disabled={loading}
-                className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+                className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 custom-sm:px-3 font-semibold text-richblack-50 custom-sm:text-sm"
               >
                 Select
               </button>

@@ -8,24 +8,24 @@ import useOnClickOutside from "../../../hooks/useOnClickOutside"
 import { logout } from "../../../Services/operations/authAPI"
 // import { logout } from "../../../services/operations/authAPI"
 
-export default function ProfileDropdown() {
+export default function ProfileDropdown({menu}) {
   const { user } = useSelector((state) => state.profile)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
 
-  useEffect(() => {
-    console.log("Open ", open);
-  }, []);
+  // useEffect(() => {
+  //   console.log("Open ", open);
+  // }, []);
 
   useOnClickOutside(ref, () => setOpen(false))
 
   if (!user) return null
 
   return (
-    <button className="relative" onClick={() => setOpen(true)}>
-      <div className="flex items-center gap-x-1">
+    <div className={`w-full relative ${menu ? "custom-sm:absolute custom-sm:top-[3.5rem] custom-sm:right-[30%]" : "custom-sm:hidden"}`} onClick={() => setOpen(true)}>
+      <div className="min-w-min custom-sm:w-[100px] border-pink-300 flex items-center gap-x-1 text-white">
         <img
           src={user?.image}
           alt={`profile-${user?.firstName}`}
@@ -57,6 +57,6 @@ export default function ProfileDropdown() {
           </div>
         </div>
       )}
-    </button>
+    </div>
   )
 }

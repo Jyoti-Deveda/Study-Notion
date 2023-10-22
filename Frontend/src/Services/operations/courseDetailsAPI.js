@@ -44,8 +44,8 @@ export const getAllCourses = async () => {
 export const fetchCourseDetails = async (courseId) => {
   const toastId = toast.loading("Loading...")
   //   dispatch(setLoading(true));
-  console.log("COurse id ", courseId);
-  console.log("TYPEOF COurse id ", typeof(courseId));
+  // console.log("COurse id ", courseId);
+  // console.log("TYPEOF COurse id ", typeof(courseId));
 
   let result = null
   try {

@@ -57,7 +57,7 @@ export function EnrolledCourses() {
               key={i}
             >
               <div
-                className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3"
+                className="flex w-[45%] custom-sm:flex-col cursor-pointer items-center gap-4 px-5 py-3"
                 onClick={() => {
                   console.log("Course ", course);
                   console.log("Section id ", course.courseContent?.[0]?._id);

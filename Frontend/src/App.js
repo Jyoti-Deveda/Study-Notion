@@ -32,12 +32,12 @@ import { CourseDetails } from "./Pages/CourseDetails"
 function App() {
 
   const user = useSelector((state) => state.profile);
-  console.log("User ", user);
-  console.log("User ", user?.user?.accountType);
-  console.log(user?.user?.accountType === "Student" );
+  // console.log("User ", user);
+  // console.log("User ", user?.user?.accountType);
+  // console.log(user?.user?.accountType === "Student" );
 
   return (
-    <div className="w-screen relative min-h-screen bg-richblack-900 flex flex-col font-inter">
+    <div className="w-screen relative min-h-screen bg-richblack-900 flex flex-col font-inter overflow-x-hidden overflow-y-hidden">
     <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>

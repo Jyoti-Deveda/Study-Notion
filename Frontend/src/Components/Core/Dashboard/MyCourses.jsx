@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { IconButton } from '../../Common/IconButton';
 import { fetchInstructorCourses } from '../../../Services/operations/courseDetailsAPI';
-import { CoursesTable } from './InstructorCourses/CoursesTable';
+import { CoursesTable } from '../Dashboard/InstructorCourses/CoursesTable'
 
 export const MyCourses = () => {
 
     const {token} = useSelector((state) => state.auth);
     const navigate = useNavigate();
     const [courses, setCourses] = useState([]);
+    const [setSidebarOpen] = useOutletContext();
 
     useEffect(() => {
         const fetchCourses = async() => {
@@ -37,7 +38,7 @@ export const MyCourses = () => {
 
         </div>
         
-        {courses && <CoursesTable courses={courses} setCourses={setCourses} />}
+        {courses && <CoursesTable courses={courses} setCourses={setCourses} setSidebarOpen={setSidebarOpen}/>}
     </div>
   )
 }

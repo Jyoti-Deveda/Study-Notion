@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +12,7 @@ export const CourseDetailsCard = ({course, setConfirmationModal, handleBuyCourse
     const {token} = useSelector((state) => state.auth);
     const navigate   = useNavigate();
     const dispatch = useDispatch();
-    console.log("Course in course Details card ", course);
+    // console.log("Course in course Details card ", course);
 
     const {
         thumbnail: thumbnailImage,
@@ -43,12 +43,16 @@ export const CourseDetailsCard = ({course, setConfirmationModal, handleBuyCourse
         copy(window.location.href);
         toast.success("Link copied to clipboard")
     }
+
+    useEffect(() => {
+        console.log("Course in coursedetailscard ", course)
+    }, [])
   return (
     <div className='flex flex-col gap-4 rounded-md bg-richblack-700 p-4 text-richblack-5'>
         <img
             src={thumbnailImage}
             alt='Thubnail Image'
-            className='max-h-[300px] min-h-[180px] w-[400p] rounded-t-md custom-sm:hidden'
+            className='max-h-[300px] w-[300px] min-h-[180px] rounded-md object-contain'
         />
         
         <div className='p-3 flex flex-col gap-y-2'>
@@ -84,10 +88,10 @@ export const CourseDetailsCard = ({course, setConfirmationModal, handleBuyCourse
                 <p className='text-md text-richblack-200 text-center'>
                     30 Days Money-back Guarantee
                 </p>
-                <p className='text-md text-richblack-5 font-semibold custom-sm:hidden'>
+                <p className='text-md text-richblack-5 font-semibold '>
                     This Course includes:
                 </p>
-                <div className='flex flex-col gap-y-3 custom-sm:hidden'>
+                <div className='flex flex-col gap-y-3 '>
                     {
                         course?.instructions?.map((item, index) => (
                             <p key={index} className='flex gap-2'>

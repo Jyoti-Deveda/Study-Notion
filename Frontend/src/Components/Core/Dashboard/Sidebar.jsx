@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { sidebarLinks } from '../../../data/dashboard-links'
 import { logout } from '../../../Services/operations/authAPI'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,8 +7,9 @@ import {SidebarLink} from "./SidebarLink"
 import {VscSignOut} from "react-icons/vsc"
 import { ConfirmationModal } from '../../Common/ConfirmationModal'
 import { HiArrowRightOnRectangle } from 'react-icons/hi2'
+import { GiTireIronCross } from 'react-icons/gi'
 
-export const Sidebar = () => {
+export const Sidebar = ({sidebarOpen, setSidebarOpen}) => {
   const {user, loading: profileLoading}= useSelector((state) => state.profile)
   const {loading:authLoading} = useSelector((state => state.auth));
 
@@ -17,8 +18,7 @@ export const Sidebar = () => {
   const [confirmationModal, setConfirmationModal] = useState(null)
   const [sidebarArrow, setSidebarArrow] = useState(null)
 
-  
-
+ 
   if(profileLoading || authLoading){
     return(
       <div className="grid h-[calc(100vh-3.5rem)] min-w-[220px] items-center border-r-[1px] border-r-richblack-700 bg-richblack-800">
@@ -27,15 +27,29 @@ export const Sidebar = () => {
     )
   }
 
-
   return (
-    <div className='text-white w-[10%] custom-sm:w-0'>
-        <div className='hidden custom-sm:block text-2xl p-2 hover:text-yellow-50'>
-          <HiArrowRightOnRectangle/>
+    <div className={`relative text-white custom-lg:w-[10%] custom-md: custom-sm:${sidebarOpen ? "w-[100%] flex flex-grow-1" : "w-0"}`}
+    // onClick={() => sidebarOpen(false)}
+    >
+        <div className='absolute hover:bg-richblack-400 bg-opacity-30 p-2 m-2 rounded-md hidden custom-sm:block text-2xl text-richblack-400 hover:text-yellow-50'
+        onClick={() => {
+          console.log("sidebar ", sidebarOpen)
+          setSidebarOpen(!sidebarOpen)
+        }}
+        >
+        {
+          sidebarOpen ? 
+          (
+            <GiTireIronCross/>
+          )
+          : (
+            <HiArrowRightOnRectangle/>
+          )
+        }
         </div>
 
-        <div className='custom-xs:hidden custom-sm:hidden flex custom-lg:min-w-[222px] custom-md:w-[225px] flex-col border-r-[1px] border-r-richblack-700
-        h-[calc(100vh-3.5rem)] bg-richblack-800 py-10 transition-all duration-150'>
+        <div className={`custom-sm:${sidebarOpen ? "w-full" : "hidden"} custom-sm:pt-14 flex custom-lg:min-w-[222px] custom-md:w-[224px] flex-col border-r-[1px] border-r-richblack-700
+        h-[calc(100vh-3.5rem)] bg-richblack-800 py-10 transition-all duration-150`}>
 
             <div className='flex flex-col'>
                 {
@@ -43,7 +57,7 @@ export const Sidebar = () => {
                     {/* comparing to display the corresponding links  */}
                     if(link.type && user?.accountType !== link.type) return null;
                     return (
-                        <SidebarLink key={link?.id} link={link} iconName={link.iconName}/>
+                        <SidebarLink key={link?.id} link={link} iconName={link.iconName} setSidebarOpen={setSidebarOpen}/>
                     )
                   })
                 }
@@ -55,6 +69,7 @@ export const Sidebar = () => {
                 <SidebarLink
                   link={{name:"Settings", path: "dashboard/settings"}}
                   iconName={"VscSettingsGear"}
+                  setSidebarOpen={setSidebarOpen}
                 />
                 <button
                   onClick={() => setConfirmationModal({

@@ -131,10 +131,10 @@ module.exports = {
       },
     },
     screens: {
-      // 'custom-xs': {
-      //   'min': '200px',
-      //   'max': '400px',
-      // },
+      'custom-xs': {
+        'min': '200px',
+        'max': '400px',
+      },
       'custom-sm': {
         'min': '200px',
         'max': '600px',
@@ -142,11 +142,14 @@ module.exports = {
       // => @media (min-width: 640px) { ... }
 
       'custom-md': {
-        'min': '601px',
+        'min': '600px',
         'max': '900px',
       },
       // => @media (min-width: 768px) { ... }
-
+      'custom-sm-md':{
+        'min': '200px',
+        'max': '900px'
+      },
       'custom-lg': {
         'min': '901px',
         'max': '1260px'

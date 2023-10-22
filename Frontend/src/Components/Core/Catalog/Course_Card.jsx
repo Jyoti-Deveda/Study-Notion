@@ -16,15 +16,15 @@ export const Course_Card = ({course, Height}) => {
 
   return (
 
-    <div className='custom-sm:w-[90%] w-full '>
+    <div className='custom-sm:w-[90%] w-full' onClick={() => console.log("Link Clicked")}>
 
-        <Link to={`/courses/${course._id}`}>
+        <Link to={`/courses/${course._id}`} className='z-100'>
             <div>
                 <div className='rounded-lg w-fit overflow-h-hidden flex items-center justify-center'>
                     <img 
                         src={course?.thumbnail}
                         alt='Course thumnail'
-                        className={`h-[200px] custom-lg:${Height} object-contain rounded-xl`}
+                        className={`h-[200px] custom-lg:${Height} object-cover rounded-xl`}
                     />
 
                 </div>

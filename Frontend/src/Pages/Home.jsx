@@ -47,6 +47,7 @@ export const Home = () => {
                 </CTAButton>
             </div>
 
+            {/* video section  */}
             <div className='w-[90%] mx-auto custom-sm:mr-[10%] my-12 shadow-[15px_15px_1px_rgba(255,_255,_255,_1)] '>
             {/* <div className='absolute bg-blue-100 h-[300px] w-[300px] rounded-full shadow-lg shadow-blue-100 '></div> */}
                 <video className='shadow-[0_-2px_10px_rgba(8,_112,_184,_0.7)]'
@@ -61,7 +62,7 @@ export const Home = () => {
                 <CodeBlocks
                     position={"custom-lg:flex-row flex-col"}
                     heading = {
-                        <div className='custom-lg:text-center text-2xl custom-sm:text-xl font-semibold'>
+                        <div className='text-2xl custom-lg:text-4xl font-semibold'>
                             Unlock your <HighlightText text={"Coding Potential"}/> with our online courses                         
                         </div>
                     }
@@ -140,7 +141,7 @@ export const Home = () => {
 
                         </div>
                         {/* for buttons  */}
-                        <div className='flex flex-row gap-7 text-white items-center justify-center mx-auto custom-sm:text-xs'>
+                        <div className='flex flex-row custom-sm:flex-col custom-sm:gap-2 gap-7 text-white items-center justify-center mx-auto custom-sm:text-xs'>
                             <CTAButton active={true} linkto={"/signup"}>
                                 <div className='flex items-center gap-3'>
                                     Explore Full Catalog   

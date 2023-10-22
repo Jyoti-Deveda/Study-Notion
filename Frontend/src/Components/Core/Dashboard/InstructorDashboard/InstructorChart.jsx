@@ -44,6 +44,9 @@ export const InstructorChart = ({courses}) => {
     //create options
     const options = {
         maintainAspectRatio: false,
+        layout: {
+            gap: 20
+        }
     }
 
   return (
@@ -72,9 +75,10 @@ export const InstructorChart = ({courses}) => {
 
         </div>
 
-        <div  className="relative mx-auto aspect-square h-full w-full">
+        <div  className="relative mx-auto aspect-square h-full w-full space-4">
             <Pie
                 data={currentChart === "students" ? chartDataForStudents: chartDataForIncome}
+                // width={''}
                 options={options}
             />
         </div>
