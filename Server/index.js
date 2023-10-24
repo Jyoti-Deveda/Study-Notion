@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 app.use(
     cors({
-        origin: "https://study-notion-frontend-two.vercel.app/",
+        origin: "*",
         methods: "*",
         credentials: true,
     })
