@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast"
 
-import { setUser } from "../../Slices/profileSlice"
+import { setUser, user } from "../../Slices/profileSlice"
 import { apiConnector } from "../apiconnector"
 import { settingsEndpoints } from "../apis"
 import { logout } from "./authAPI"
@@ -33,8 +33,9 @@ export function updateDisplayPicture(token, formData) {
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
-      toast.success("Display Picture Updated Successfully")
       dispatch(setUser(response.data.data))
+      console.log()
+      toast.success("Display Picture Updated Successfully")
     } catch (error) {
       console.log("UPDATE_DISPLAY_PICTURE_API API ERROR............", error)
       toast.error("Could Not Update Display Picture")

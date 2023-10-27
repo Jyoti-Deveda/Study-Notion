@@ -22,7 +22,7 @@ export const ReviewSlider = () => {
   useEffect(() => {
     const fetchAllRatings = async() => {
       const {data} = await apiConnector("GET", ratingsEndpoints.REVIEWS_DETAILS_API);
-      console.log("RESPONSE ", data);
+      // console.log("RESPONSE ", data);
 
       if(data?.success){
         setReviews(data?.data);
@@ -31,9 +31,9 @@ export const ReviewSlider = () => {
     fetchAllRatings();
   }, []);
 
-  useEffect(() => {
-    console.log("Reviews ", reviews);
-  }, [reviews]);
+  // useEffect(() => {
+  //   console.log("Reviews ", reviews);
+  // }, [reviews]);
 
   return (
     <div className='text-white '>

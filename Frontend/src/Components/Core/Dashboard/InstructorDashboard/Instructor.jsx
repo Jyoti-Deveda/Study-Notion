@@ -11,7 +11,7 @@ export const Instructor = () => {
     const [loading, setLoading] = useState(false);
     const [instructorData, setInstructorData] = useState(null);
     const [courses, setCourses] = useState([]);
-    const [size, setSize] = useState(0);
+    const [size, setSize] = useState(3);
 
     window.addEventListener('resize', () => {
       const windowSize = window.innerWidth;

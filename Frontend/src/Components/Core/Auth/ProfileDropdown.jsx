@@ -24,7 +24,7 @@ export default function ProfileDropdown({menu}) {
   if (!user) return null
 
   return (
-    <div className={`w-full relative ${menu ? "custom-sm:absolute custom-sm:top-[3.5rem] custom-sm:right-[30%]" : "custom-sm:hidden"}`} onClick={() => setOpen(true)}>
+    <div className={`w-full relative ${menu ? "custom-sm:absolute custom-sm:top-[3.5rem] custom-sm:right-[3.3rem]" : "custom-sm:hidden"}`} onClick={() => setOpen(true)}>
       <div className="min-w-min custom-sm:w-[100px] border-pink-300 flex items-center gap-x-1 text-white">
         <img
           src={user?.image}

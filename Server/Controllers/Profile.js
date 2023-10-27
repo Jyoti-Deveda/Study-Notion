@@ -24,7 +24,8 @@ exports.updateProfileDetail = async (req, res) => {
         // }
 
         //find profile through user
-        const userDetails = await User.findById(userId);
+        const userDetails = await User.findById(userId)
+                          .populate("additionalDetails");
 
         console.log("userDetails ", userDetails);
 
@@ -42,11 +43,12 @@ exports.updateProfileDetail = async (req, res) => {
         
         await profileDetails.save();
         console.log("Updated profile details")
+        console.log("CALLED UPDATE PROFILE")
         //return response
         return res.status(200).json({
             success: true,
             message: "Profile updated successfully",
-            profileDetails,
+            userDetails,
         })
     }catch(err){
         return res.status(500).json({
@@ -61,9 +63,9 @@ exports.updateProfileDetail = async (req, res) => {
 exports.deleteAccount = async (req, res) => {
     try{
         // TODO: Find More on Job Schedule
-		// const job = schedule.scheduleJob("10 * * * * *", function () {
-		// 	console.log("The answer to life, the universe, and everything!");
-		// });
+        const job = schedule.scheduleJob("10 * * * * *", function () {
+          console.log("The answer to life, the universe, and everything!");
+        });
         //get id
         const userId = req.user.id;
         console.log("userId ", userId);

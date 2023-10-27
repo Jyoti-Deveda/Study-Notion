@@ -132,11 +132,11 @@ module.exports = {
     },
     screens: {
       'custom-xs': {
-        'min': '200px',
+        'min': '100px',
         'max': '400px',
       },
       'custom-sm': {
-        'min': '200px',
+        'min': '100px',
         'max': '600px',
       },
       // => @media (min-width: 640px) { ... }

@@ -17,7 +17,7 @@ export const Home = () => {
   return (
     <div>
         {/* Section 1 */}
-        <div className='w-11/12 max-w-maxContent relative mx-auto flex flex-col items-center custom-sm:items-start justify-between text-white '>
+        <div className='w-11/12 max-w-maxContent relative mx-auto flex flex-col items-center custom-sm:items-start justify-between text-white gap-y-2'>
             <Link to={"/signup"}>
                 <div className='mt-16 p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200 
                 transition-all duration-200 hover:scale-95 w-fit group stroke-gray-100 border-b border-pure-greys-400'>
@@ -37,7 +37,7 @@ export const Home = () => {
                 With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors. 
             </div>
 
-            <div className='flex flex-row gap-7 mt-8'>
+            <div className='flex flex-row flex-wrap gap-7 mt-8'>
                 <CTAButton active={true} linkto={"/signup"}>
                     Learn more
                 </CTAButton>

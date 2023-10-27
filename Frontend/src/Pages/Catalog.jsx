@@ -17,6 +17,7 @@ export const Catalog = () => {
     //fetch all categories
     useEffect(() => {
         const getCategories = async() => {
+            // console.log("GET CATEGORIES CALLED")
             const res = await apiConnector("GET", categories.CATEGORIES_API);
             // console.log("res ", res);
             const category_id = res?.data?.data?.filter((ct) => ct.name.split(" ").join("-").toLowerCase() === catalogName)[0]._id;
@@ -28,9 +29,10 @@ export const Catalog = () => {
 
     useEffect(() => {
         const getCategoryDetails = async () => {
+            console.log("GETCATEGORYdETAILS IS CALLED")
             try{
                 const res = await getCatalogPageData(categoryId);
-                console.log("CATEGORIES IN CATALOGPAGEDATA ", res)
+                // console.log("CATEGORIES IN CATALOGPAGEDATA ", res)
                 setCatalogPageData(res);
             }catch(err){
                 console.log(err);

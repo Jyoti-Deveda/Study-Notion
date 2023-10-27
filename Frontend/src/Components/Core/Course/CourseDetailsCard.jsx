@@ -44,9 +44,9 @@ export const CourseDetailsCard = ({course, setConfirmationModal, handleBuyCourse
         toast.success("Link copied to clipboard")
     }
 
-    useEffect(() => {
-        console.log("Course in coursedetailscard ", course)
-    }, [])
+    // useEffect(() => {
+    //     console.log("Course in coursedetailscard ", course)
+    // }, [])
   return (
     <div className='flex flex-col gap-4 rounded-md bg-richblack-700 p-4 text-richblack-5'>
         <img

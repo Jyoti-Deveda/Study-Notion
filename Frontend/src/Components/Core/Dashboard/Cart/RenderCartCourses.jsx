@@ -22,16 +22,16 @@ export const RenderCartCourses = () => {
                     <div className="flex flex-1 flex-col gap-4 xl:flex-row">
                         <img src={course.thumbnail}
                         alt={course?.courseName}
-                        className="h-[148px] w-[220px] rounded-lg object-cover"
+                        className="h-[148px] w-[220px] rounded-lg object-contain "
                         />
                         <div className='flex flex-col space-y-1'>
-                            <p className='text-lg font-medium text-richblack-5'>
+                            <p className='text-lg capitalize font-medium text-richblack-5'>
                                 {course?.courseName}</p>
                             <p className="text-sm text-richblack-300">
                                 {course?.category?.name}
                             </p>
                             <div className="flex items-center gap-2">
-                                <span className='text0yellow-5'>4.5</span>
+                                <span className='text-yellow-5'>4.5</span>
                                 <ReactStars
                                     count={5}
                                     value={course?.ratingAndReviews?.length}
@@ -40,6 +40,7 @@ export const RenderCartCourses = () => {
                                     activeIcon="ffd700"
                                     emptyIcon={<GiNinjaStar/>}
                                     fullIcon={<GiNinjaStar/>}
+                                    className='flex flex-row'
                                 />
 
                                 <span className='text-richblack-400'>

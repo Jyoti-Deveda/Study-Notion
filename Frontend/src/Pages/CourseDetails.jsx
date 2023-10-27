@@ -28,9 +28,11 @@ export const CourseDetails = () => {
 
     useEffect(() => {
         const getCourseFullDetails = async() => {
+            console.log("GETCOURSEFULLDETAILS CALLED")
+            console.log("COURSE ID ", courseId);
             try{
                 const result = await fetchCourseDetails(courseId);
-                console.log("RESULT ", result);
+                // console.log("RESULT ", result);
                 setCourseData(result);
             }catch(err){
                 console.log("Could not fetch course details");
@@ -39,9 +41,9 @@ export const CourseDetails = () => {
         getCourseFullDetails();
     }, [courseId]);
 
-    useEffect(() => {
-        console.log("COURSE DATA ", courseData);
-    }, [courseData]);
+    // useEffect(() => {
+    //     console.log("COURSE DATA ", courseData);
+    // }, [courseData]);
 
     const [avgReviewCount, setAvgReviewCount] = useState(0);
 
@@ -88,7 +90,7 @@ export const CourseDetails = () => {
     if(loading || !courseData) {
         return (
             <div>
-                Loading...
+                {/* Loading... */}
             </div>
         )
     }

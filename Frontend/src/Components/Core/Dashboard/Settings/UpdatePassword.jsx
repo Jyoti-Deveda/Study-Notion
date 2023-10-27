@@ -13,6 +13,7 @@ export default function UpdatePassword() {
 
   const [showOldPassword, setShowOldPassword] = useState(false)
   const [showNewPassword, setShowNewPassword] = useState(false)
+  const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false)
 
   const {
     register,
@@ -86,6 +87,35 @@ export default function UpdatePassword() {
                 )}
               </span>
               {errors.newPassword && (
+                <span className="-mt-1 text-[12px] text-yellow-100">
+                  Please enter your New Password.
+                </span>
+              )}
+            </div>
+
+            <div className="relative flex flex-col gap-2 custom-lg:w-[48%]">
+              <label htmlFor="newPassword" className="lable-style">
+                Confirm New Password
+              </label>
+              <input
+                type={showNewPassword ? "text" : "password"}
+                name="confirmNewPassword"
+                id="confirmNewPassword"
+                placeholder="Confirm New Password"
+                className="form-style"
+                {...register("confirmNewPassword", { required: true })}
+              />
+              <span
+                onClick={() => setShowConfirmNewPassword((prev) => !prev)}
+                className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+              >
+                {showConfirmNewPassword ? (
+                  <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                ) : (
+                  <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                )}
+              </span>
+              {errors.setShowConfirmNewPassword && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
                   Please enter your New Password.
                 </span>

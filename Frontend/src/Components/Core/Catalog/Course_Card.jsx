@@ -16,7 +16,9 @@ export const Course_Card = ({course, Height}) => {
 
   return (
 
-    <div className='custom-sm:w-[90%] w-full' onClick={() => console.log("Link Clicked")}>
+    <div className='custom-sm:w-[90%] w-full' 
+    // onClick={() => console.log("Link Clicked")}
+    >
 
         <Link to={`/courses/${course._id}`} className='z-100'>
             <div>

@@ -30,37 +30,12 @@ export const Navbar = () => {
 
     const location = useLocation();
 
-
-    // const fetchSubLinks = async() => {
-    //         try{
-    //             const result = await apiConnector("GET", categories.CATEGORIES_API);
-    //             console.log("Printing sub links: ", result);
-    //             const categorie = result.data.categories;
-    //             console.log("Categorie ", categorie);
-    //             const categoryName = [];
-
-    //             await categorie.forEach((category) => {
-    //                 categoryName.push(category["name"]);
-    //                 console.log(categoryName);
-    //             })
-    //             setSubLinks(categoryName);
-    //             console.log("sublinks ", subLinks);
-    //         }catch(err){
-    //             console.log("Cannot fetch the catalog list: ",err);
-
-    //         }
-    // }
-    // useEffect(() => {
-    //     fetchSubLinks();
-    // }, []);
-
-       
+      
   const [subLinks, setSubLinks] = useState([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     ;(async () => {
-        // console.log("HELOO FUNCTION STARTED")
       setLoading(true)
     //   try {
         // console.log("Categories url ", categories.CATEGORIES_API);
@@ -121,10 +96,9 @@ export const Navbar = () => {
                                             <AiOutlineDown/>
                                         </div>
 
-                                            <div className="invisible absolute left-[50%] top-[50%] flex w-[8rem] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg
-                                             bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em]
+                                            <div className="invisible absolute left-[50%] top-[50%] flex w-[8rem] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em]
                                               group-hover:opacity-100 custom-lg:w-[300px] z-50">
-                                                <div className='absolute left-[50%] top-0 h-7 w-7 custom-sm:h-4 custom-sm:w-4 translate-x-[80%] translate-y-[-40%] rotate-45 bg-richblack-5 rounded-sm'></div>
+                                                <div className='absolute left-[50%] top-0 h-7 w-7 custom-sm:h-4 custom-sm:w-4 translate-x-[80%] translate-y-[-40%] rotate-45 bg-richblack-5 rounded-sm -z-10'></div>
                                                 {loading ? (
                                                     <p className="spinner"></p>
                                                     ) : subLinks.length ? (
@@ -167,11 +141,11 @@ export const Navbar = () => {
             </nav>
 
             {/* login | signup | dashboard | cart | menu | profile dropdown*/}
-            <div className={`flex gap-x-8 items-center justify-around `}>
+            <div className={`flex gap-x-8 items-center justify-around custom-sm:gap-x-2`}>
                 {
                     user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
                         <Link to={"/dashboard/cart"} className='relative text-richblack-5'>
-                            <BsFillCartFill className="text-2xl text-richblack-100 custom-sm:hidden"/>
+                            <BsFillCartFill className="text-2xl text-richblack-100 "/>
                             {/* number on the cart  */}
                             {
                                 totalItems > 0 && (

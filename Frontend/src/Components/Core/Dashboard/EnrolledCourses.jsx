@@ -21,6 +21,7 @@ export function EnrolledCourses() {
     }
   };
   useEffect(() => {
+    console.log("GET ENROLLED COURSES");
     getEnrolledCourses();
   }, [])
 
