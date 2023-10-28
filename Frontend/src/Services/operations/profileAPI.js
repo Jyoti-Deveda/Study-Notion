@@ -69,14 +69,14 @@ export async function getInstructorData(token){
   const toastId = toast.loading("Loading");
   let result = [];
 
-  console.log("URL ", GET_INSTRUCTOR_DATA_API);
+  // console.log("URL ", GET_INSTRUCTOR_DATA_API);
   try{
     const response = await apiConnector("GET", GET_INSTRUCTOR_DATA_API, null, 
     {
       Authorization: `Bearer ${token}`,
     })
 
-    console.log("GET_INSTRUCTOR_DATA_API_RESPONSE ", response);
+    // console.log("GET_INSTRUCTOR_DATA_API_RESPONSE ", response);
     result = response?.data?.courses
 
   }catch(err){

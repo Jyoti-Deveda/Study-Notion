@@ -11,7 +11,7 @@ export const Instructor = () => {
     const [loading, setLoading] = useState(false);
     const [instructorData, setInstructorData] = useState(null);
     const [courses, setCourses] = useState([]);
-    const [size, setSize] = useState(3);
+    const [size, setSize] = useState(2);
 
     window.addEventListener('resize', () => {
       const windowSize = window.innerWidth;
@@ -26,9 +26,9 @@ export const Instructor = () => {
       }
     })
 
-    useEffect(() => {
-      console.log("Size ", size);
-    },  [window.innerWidth])
+    // useEffect(() => {
+    //   console.log("Size ", size);
+    // },  [window.innerWidth])
 
 
     useEffect(() => {
@@ -37,7 +37,7 @@ export const Instructor = () => {
             const instructorApiData = await getInstructorData(token);
             const result = await fetchInstructorCourses(token);
 
-            console.log("instructorApiData ", instructorApiData);
+            // console.log("instructorApiData ", instructorApiData);
 
             if(instructorApiData.length)
                 setInstructorData(instructorApiData);
@@ -54,7 +54,7 @@ export const Instructor = () => {
     const totalStudents = instructorData?.reduce((acc, curr) => acc + curr.totalStudentsEnrolled, 0);
 
   return (
-    <div className='text-white'>
+    <div className='text-white flex flex-col w-full'>
         <div className='space-y-2'>
             <h1 className='text-2xl font-bold text-richblack-5'>
                 Hi {user?.firstName} 👋
@@ -65,7 +65,7 @@ export const Instructor = () => {
         </div>
 
         {loading ? (
-          <div className="spinner"></div>
+          <div className="spinner flex justify-center items-center"></div>
         ) : courses.length > 0 ? (
           <div>
             <div className="my-4 flex custom-lg:flex-row custom-lg:h-[450px] min-h-max gap-y-4 custom-lg:space-x-4 flex-col">
@@ -120,7 +120,7 @@ export const Instructor = () => {
                     <img
                       src={course.thumbnail}
                       alt={course.courseName}
-                      className="h-[201px] custom-md:h-[150px] w-full rounded-md object-cover"
+                      className="h-[201px] custom-md:h-[150px] w-full rounded-md object-contain"
                     />
                     <div className="mt-3 w-full">
                       <p className="text-sm font-medium text-richblack-50">

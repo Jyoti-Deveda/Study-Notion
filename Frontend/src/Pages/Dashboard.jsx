@@ -14,9 +14,9 @@ export const Dashboard = () => {
       window.addEventListener('resize', () => setSidebarOpen(false))
     }, [])
 
-    useEffect(() => {
-      console.log("sidebaropen ", sidebarOpen);
-    }, [sidebarOpen])
+    // useEffect(() => {
+    //   console.log("sidebaropen ", sidebarOpen);
+    // }, [sidebarOpen])
   
 
     if(profileLoading || authLoading){

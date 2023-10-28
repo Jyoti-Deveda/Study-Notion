@@ -175,7 +175,7 @@ export const CourseInformationForm = () => {
             />
             {
                 errors.courseTitle && (
-                    <span>Course Title is required</span>
+                    <span  className="ml-2 text-xs tracking-wide text-pink-200">Course Title is required</span>
                 )
             }
         </div>
@@ -191,7 +191,7 @@ export const CourseInformationForm = () => {
             />
             {
                 errors.courseShortDesc && (
-                    <span>Course Description is required</span>
+                    <span className="ml-2 text-xs tracking-wide text-pink-200">Course Description is required</span>
                 )
             }
         </div>
@@ -211,7 +211,7 @@ export const CourseInformationForm = () => {
             <HiOutlineCurrencyRupee className='absolute top-8 text-richblack-400'/>
             {
                 errors.coursePrice && (
-                    <span>Course Price is required</span>
+                    <span className="ml-2 text-xs tracking-wide text-pink-200">Course Price is required</span>
                 )
             }
         </div>
@@ -237,7 +237,7 @@ export const CourseInformationForm = () => {
             </select>
             {
                 errors.courseCategory && (
-                    <span>Course category is required</span>
+                    <span className="ml-2 text-xs tracking-wide text-pink-200">Course category is required</span>
                 )
             }
         </div>

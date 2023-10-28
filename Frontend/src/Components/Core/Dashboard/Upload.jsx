@@ -32,7 +32,7 @@ export const Upload = ({
   }
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    accept: !video
+    acceptedFiles: !video
       ? { "image/*": [".jpeg", ".jpg", ".png"] }
       : { "video/*": [".mp4"] },
     onDrop,
@@ -107,7 +107,7 @@ export const Upload = ({
               <span className="font-semibold text-yellow-50">Browse</span> a
               file
             </p>
-            <ul className="mt-10 flex list-disc justify-between space-x-12 text-center  text-xs text-richblack-200">
+            <ul className="mt-10 flex list-disc justify-between space-x-12 custom-sm:space-x-2 custom-xs:space-x-4 custom-xs:list-none text-center  text-xs text-richblack-200">
               <li>Aspect ratio 16:9</li>
               <li>Recommended size 1024x576</li>
             </ul>

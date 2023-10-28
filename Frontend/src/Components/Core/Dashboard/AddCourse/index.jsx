@@ -13,7 +13,7 @@ export const AddCourse = () => {
                 </div>
                 <div className='bg-richblack-800 text-richblack-5 flex flex-col gap-4 h-max p-3 custom-lg:w-[40%]'>
                     <p className='text-lg'>⚡Code Upload Tips</p>
-                    <ul className='text-xs list-disc m-3 flex flex-col gap-2'>
+                    <ul className='text-xs list-disc m-3 flex flex-col custom-lg:gap-2 gap-y-4'>
                         <li>Set the Course Price option or make it free.</li>
                         <li>Standard size for the course thumbnail is 1024x576.</li>
                         <li>Video section controls the course overview video.</li>
